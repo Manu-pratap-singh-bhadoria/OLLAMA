@@ -94,7 +94,11 @@ Invoice Text:
     except HTTPException:
         raise
 
-    except Exception:
+    except Exception as e:
+        print("========== ERROR ==========")
+        print(repr(e))
+        print("===========================")
+
         return InvoiceResponse(
             vendor="",
             amount=0,
